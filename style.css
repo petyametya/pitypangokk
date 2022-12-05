@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    margin: 40px;
+    color: purple;
+    font-size: 1em;
+}
+
+#header{
+    grid-area: header;
+    background-image: url(./img/dandelion.jpg);}
+
+#nav{
+    grid-area: nav;
+    background-image: url(./img/dand2.jpg);}
+
+#content{
+    grid-area: content;
+    background-image: url(./img/dandy.gif);
+}
+
+#aside{
+    grid-area: aside;
+    background-image: url(./img/dand3.jpg);}
+
+#footer{
+    grid-area: footer;
+    background-image: url(./img/dandy2.gif);}
+
+#wrapper{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header nav nav"
+    "aside footer content";
+    background-size: cover;
+    opacity: 0.5;
+}
+
+#wrapper > div{
+    background-color: bisque;
+    border-radius: 5px;
+    padding: 10px;
+    height: 40vh;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+#wrapper >div:hover{
+    opacity: 1;
+}
+
+@media all and (max-width: 500px){
+    #wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "aside"
+        "footer"
+        "content";
+    }
+}
